@@ -2,8 +2,6 @@
 
 ---
 
-## English Version
-
 A virtual assistant chatbot for the **IFish Seafood** store. This project previously used Deep Learning but has been completely rebuilt into an interactive web application using **Streamlit** with a *Rule-Based (Keyword Matching)* approach. The goal is to make the application lighter, more responsive, and easier to deploy without the need for heavy model training.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
@@ -36,23 +34,22 @@ proyek-chatbot/
 
 1. Clone Repository
 
-```text
+```
 Bash
-git clone (https://github.com/Ahmadd1998/chatbot-bangkit)
-
+git clone https://github.com/Ahmadd1998/chatbot-bangkit
 cd proyek-chatbot
 ```
 
 2. Install Dependencies
 
-```text
+```
 Bash
 pip install -r requirements.txt
 ```
 
 3. Run the Application
 
-```text
+```
 Bash
 streamlit run app.py
 ```
@@ -60,10 +57,13 @@ streamlit run app.py
 The application will automatically open in your browser at http://localhost:8501.
 
 ### 📊 Dataset
+
 The dataset uses a JSON format (dataset/intents.json) consisting of 27 conversation intents. Adding new scenarios or updating prices can be done instantly by editing this JSON file without retraining any algorithms.
 
 ### 👥 Contributor
+
 Ahmad Gozali Abbas — Lead Developer
 
 ### 📄 License
+
 Open-source for educational and portfolio purposes. Built with 🦐 using Streamlit.
