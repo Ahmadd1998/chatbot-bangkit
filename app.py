@@ -1,59 +1,64 @@
 import streamlit as st
 import json
 import random
+import pickle
+import numpy as np
+import nltk
+from nltk.stem.lancaster import LancasterStemmer
+import tflearn
+import tensorflow as tf
 
-# Load intents
-with open('dataset/intents.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
+nltk.download('punkt', quiet=True)
+stemmer = LancasterStemmer()
 
-st.set_page_config(page_title="IFish Chatbot", page_icon="🦐", layout="centered")
+st.set_page_config(page_title="IFish Chatbot", page_icon="🦐")
 
-# Sidebar
-st.sidebar.title("🦐 IFish Seafood")
-st.sidebar.write("**Pat - AI Assistant**")
-st.sidebar.caption("Fresh Seafood • Delivered Fast")
-st.sidebar.divider()
-st.sidebar.write("**Jam Operasional**")
-st.sidebar.write("05.00 - 11.00 WIB")
+# Load dataset
+with open('dataset/intents.json') as file:
+    data = json.load(file)
 
-if st.sidebar.button("🗑️ Clear Chat"):
-    st.session_state.messages = []
-    st.rerun()
+# Load training data
+with open("data.oke", "rb") as f:
+    words, labels, training, output = pickle.load(f)
 
-# Main UI
-st.title("🦐 Chat dengan Pat")
-st.caption("Asisten Pintar IFish Seafood")
+# Load model
+tf.compat.v1.reset_default_graph()
+net = tflearn.input_data(shape=[None, len(training[0])])
+net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
+net = tflearn.regression(net)
+model = tflearn.DNN(net)
+model.load("model.tflearn")
 
-# Initialize chat
+st.title("🦐 IFish Chatbot - TensorFlow Version")
+st.caption("Powered by Bangkit 2021 Model")
+
 if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "Halo! Selamat datang di IFish Seafood 🦐\nAda yang bisa Pat bantu hari ini?"}
-    ]
+    st.session_state.messages = [{"role": "assistant", "content": "Halo! Selamat datang di IFish Seafood 🦐"}]
 
-# Display messages
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# User input
-if prompt := st.chat_input("Ketik pesanmu di sini..."):
+if prompt := st.chat_input("Ketik pesanmu..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     
-    user_input = prompt.lower()
-    
-    # Exit
-    if any(word in user_input for word in ["quit", "exit", "dah", "bye", "keluar", "selesai", "tutup"]):
-        st.session_state.messages.append({"role": "assistant", "content": "Terima kasih telah menggunakan Pat! Sampai jumpa lagi 🦐"})
-        st.stop()
-    
-    # Simple matching
-    responded = False
-    for intent in data.get("intents", []):
-        if any(word in user_input for word in [p.lower() for p in intent.get("patterns", [])]):
-            response = random.choice(intent["responses"])
+    bag = [0] * len(words)
+    s_words = nltk.word_tokenize(prompt)
+    s_words = [stemmer.stem(word.lower()) for word in s_words]
+
+    for se in s_words:
+        for i, w in enumerate(words):
+            if w == se:
+                bag[i] = 1
+
+    results = model.predict([bag])[0]
+    results_index = np.argmax(results)
+    tag = labels[results_index]
+
+    for tg in data["intents"]:
+        if tg['tag'] == tag:
+            response = random.choice(tg['responses'])
             st.session_state.messages.append({"role": "assistant", "content": response})
-            responded = True
             break
-    
-    if not responded:
-        st.session_state.messages.append({"role": "assistant", "content": "Maaf, Pat belum paham. Coba tanya tentang **harga**, **kesegaran**, **pengiriman**, atau **jam buka** ya!"})
