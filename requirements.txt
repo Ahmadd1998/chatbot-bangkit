@@ -1,7 +1,2 @@
 # Core
 streamlit==1.38.0
-nltk==3.9.1
-numpy==2.1.0
-
-# Optional (buat keamanan)
-pandas==2.2.2
