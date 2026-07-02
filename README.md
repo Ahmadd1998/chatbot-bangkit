@@ -10,6 +10,7 @@ Proyek ini menggunakan **TensorFlow** dan **TFLearn** untuk melakukan *intent cl
 ---
 
 ## ✨ Fitur Utama
+Bisa cobain Demo disini yaa : https://chatbot-ifish.streamlit.app/
 - Klasifikasi intent menggunakan neural network
 - Mendukung variasi kalimat (tidak harus persis sama dengan dataset)
 - Chat interaktif berbasis terminal
