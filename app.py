@@ -13,7 +13,7 @@ data = load_intents()
 st.set_page_config(page_title="IFish Chatbot", page_icon="🦐", layout="centered")
 
 st.sidebar.title("🦐 IFish Seafood")
-st.sidebar.write("**Pat Assistant**")
+st.sidebar.write("**PatPat Assistant**")
 st.sidebar.caption("Fresh Seafood Marketplace")
 
 # 2. Fix Clear Chat: Langsung isi dengan pesan awal, jangan dikosongkan []
