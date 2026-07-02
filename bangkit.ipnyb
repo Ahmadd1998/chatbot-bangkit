@@ -1,0 +1,12 @@
+
+---
+
+### Alternatif (Kalau mau di code cell):
+
+```python
+# === REQUIREMENTS LAMA (2021) ===
+# tensorflow==2.5.0
+# tflearn==0.5.0
+# nltk
+# numpy
+# streamlit
