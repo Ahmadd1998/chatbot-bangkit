@@ -33,7 +33,7 @@
     {
       "tag": "shop",
       "name": "Menu & Rekomendasi",
-      "patterns": ["menu", "mau beli", "rekomendasi", "ada apa saja", "jual apa", "katalog", "daftar ikan"],
+      "patterns": ["menu", "mau beli", "rekomendasi", "ada apa saja", "jual apa", "katalog", "daftar ikan", "ikan", "udang", "kepiting", "kerang", "cumi"],
       "responses": ["Kami menyediakan udang, kepiting, kerang, cumi, dan berbagai ikan laut fresh!", "Rekomendasi hari ini: Udang pancet fresh dan Kepiting bakau super!"]
     },
     {
@@ -43,10 +43,12 @@
       "responses": ["IFish buka setiap hari pukul 05.00 - 12.00 WIB."]
     },
     {
-      "tag": "price",
+     "tag": "price",
       "name": "Harga",
-      "patterns": ["harga", "berapa harga", "price", "per kilo", "harga udang", "harga kepiting", "harga kerang", "harganya"],
-      "responses": ["Udang fresh: Rp 60.000/kg 🦐", "Kepiting: Rp 110.000/kg 🦀", "Kerang: Rp 50.000/kg","Ikan: Rp 20.000/kg", "Semua harga per kilo ya. Beli banyak bisa nego."]
+      "patterns": ["harga", "berapa harga", "price", "per kilo", "harga udang", "harga kepiting", "harga kerang", "harga ikan", "harganya", "pricelist"],
+      "responses": [
+        "Daftar Harga Hari Ini:\n🦐 Udang fresh: Rp 60.000/kg\n🦀 Kepiting: Rp 110.000/kg\n🦪 Kerang: Rp 50.000/kg\n🐟 Ikan: Rp 20.000/kg\n\n*Semua harga per kilo ya bro. Beli borongan bisa nego!*"
+      ]
     },
     {
       "tag": "fresh",
