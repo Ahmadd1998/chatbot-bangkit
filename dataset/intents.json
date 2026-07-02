@@ -46,7 +46,7 @@
       "tag": "price",
       "name": "Harga",
       "patterns": ["harga", "berapa harga", "price", "per kilo", "harga udang", "harga kepiting", "harga kerang", "harganya"],
-      "responses": ["Udang fresh: Rp10.000/kg 🦐", "Kepiting: Rp10.000/kg 🦀", "Kerang: Rp10.000/kg", "Semua harga per kilo ya. Beli banyak bisa nego."]
+      "responses": ["Udang fresh: Rp60.000/kg 🦐", "Kepiting: Rp110.000/kg 🦀", "Kerang: Rp50.000/kg", "Semua harga per kilo ya. Beli banyak bisa nego."]
     },
     {
       "tag": "fresh",
