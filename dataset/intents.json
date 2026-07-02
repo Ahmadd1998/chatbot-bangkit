@@ -1,0 +1,70 @@
+{
+  "chatbot_name": "PatPat - IFish Assistant",
+  "shop_name": "IFish Seafood",
+  "version": "2.1",
+  "language": "id",
+  "last_updated": "2026-07-02",
+  
+  "intents": [
+    {
+      "tag": "greeting",
+      "name": "Salam",
+      "patterns": ["hi", "halo", "hai", "selamat pagi", "selamat siang", "selamat malam", "ada orang", "bro", "pagi", "siang"],
+      "responses": ["Halo! Selamat datang di IFish Seafood 🦐", "Hai! Ada yang bisa Pat bantu hari ini?", "Welcome to IFish! Fresh seafood setiap hari."]
+    },
+    {
+      "tag": "goodbye",
+      "name": "Pamit",
+      "patterns": ["bye", "goodbye", "dah", "sampai jumpa", "keluar", "quit", "exit", "selesai", "tutup", "thank you bye"],
+      "responses": ["Terima kasih telah chat dengan Pat! Sampai jumpa 🦐", "Bye! Semoga seafoodnya fresh dan enak!", "Hati-hati di jalan ya!"]
+    },
+    {
+      "tag": "thanks",
+      "name": "Terima Kasih",
+      "patterns": ["makasih", "terima kasih", "thanks", "thank you", "sukses"],
+      "responses": ["Sama-sama bro!", "Senang bisa membantu 😊", "Terima kasih juga!"]
+    },
+    {
+      "tag": "name",
+      "name": "Nama Bot",
+      "patterns": ["nama kamu siapa", "siapa namamu", "who are you", "pat siapa"],
+      "responses": ["Aku Pat, asisten virtual IFish Seafood 🦐", "Namaku Pat dari tim IFish!"]
+    },
+    {
+      "tag": "shop",
+      "name": "Menu & Rekomendasi",
+      "patterns": ["menu", "mau beli", "rekomendasi", "ada apa saja", "jual apa", "whats on the menu"],
+      "responses": ["Kami menyediakan udang, kepiting, kerang, dan ikan fresh setiap hari!", "Rekomendasi hari ini: Udang fresh dan Kepiting super!"]
+    },
+    {
+      "tag": "hours",
+      "name": "Jam Operasional",
+      "patterns": ["jam berapa buka", "jam operasional", "buka sampai jam berapa", "tutup jam berapa"],
+      "responses": ["IFish buka setiap hari pukul 05.00 - 12.00 WIB."]
+    },
+    {
+      "tag": "price",
+      "name": "Harga",
+      "patterns": ["harga", "berapa harga", "price", "per kilo", "harga udang", "harga kepiting", "harga kerang"],
+      "responses": ["Udang fresh: Rp10.000/kg 🦐", "Kepiting: Rp10.000/kg 🦀", "Kerang: Rp10.000/kg", "Semua harga per kilo ya."]
+    },
+    {
+      "tag": "fresh",
+      "name": "Kesegaran",
+      "patterns": ["fresh ga", "masih fresh", "sejak kapan", "baru ditangkap", "kualitas"],
+      "responses": ["Sangat fresh! Ditangkap semalam dan dijual pagi harinya.", "Kualitas premium dari nelayan lokal."]
+    },
+    {
+      "tag": "durable",
+      "name": "Penyimpanan",
+      "patterns": ["tahan berapa lama", "simpan di kulkas", "awet ga", "bisa disimpan"],
+      "responses": ["Di freezer bisa tahan lama. Di suhu ruangan cepat basi, sebaiknya langsung dimasak."]
+    },
+    {
+      "tag": "deliver",
+      "name": "Pengiriman",
+      "patterns": ["kirim", "delivery", "diantar", "ongkir", "bisa ke rumah"],
+      "responses": ["Bisa dikirim ke rumah menggunakan ojek online.", "Kami kirim secepatnya setelah pesanan diterima."]
+    }
+  ]
+}
