@@ -1,7 +1,7 @@
 {
   "chatbot_name": "PatPat - IFish Assistant",
   "shop_name": "IFish Seafood",
-  "version": "2.2",
+  "version": "2.4",
   "language": "id",
   "last_updated": "2026-07-02",
   
@@ -9,7 +9,7 @@
     {
       "tag": "greeting",
       "name": "Salam",
-      "patterns": ["hi", "halo", "hai", "selamat pagi", "selamat siang", "selamat malam", "ada orang", "bro", "pagi", "siang"],
+      "patterns": ["hi", "halo", "hai", "selamat pagi", "selamat siang", "selamat malam", "ada orang", "bro", "pagi", "siang", "ping", "p"],
       "responses": ["Halo! Selamat datang di IFish Seafood 🦐", "Hai! Ada yang bisa Pat bantu hari ini?", "Welcome to IFish! Fresh seafood setiap hari."]
     },
     {
@@ -21,13 +21,13 @@
     {
       "tag": "thanks",
       "name": "Terima Kasih",
-      "patterns": ["makasih", "terima kasih", "thanks", "thank you", "sukses"],
+      "patterns": ["makasih", "terima kasih", "thanks", "thank you", "sukses", "oke siap", "ok makasih", "sip"],
       "responses": ["Sama-sama bro!", "Senang bisa membantu", "Terima kasih juga!"]
     },
     {
       "tag": "name",
       "name": "Nama Bot",
-      "patterns": ["nama kamu siapa", "siapa namamu", "who are you", "pat siapa", "kamu robot"],
+      "patterns": ["nama kamu siapa", "siapa namamu", "who are you", "pat siapa", "kamu robot", "bot ya"],
       "responses": ["Aku Pat, asisten virtual IFish Seafood 🦐", "Namaku Pat dari tim IFish!"]
     },
     {
@@ -39,82 +39,138 @@
     {
       "tag": "hours",
       "name": "Jam Operasional",
-      "patterns": ["jam berapa buka", "jam operasional", "buka sampai jam berapa", "tutup jam berapa", "hari ini buka"],
+      "patterns": ["jam berapa buka", "jam operasional", "buka sampai jam berapa", "tutup jam berapa", "hari ini buka", "jam kerja"],
       "responses": ["IFish buka setiap hari pukul 05.00 - 12.00 WIB."]
     },
     {
-     "tag": "price",
+      "tag": "price",
       "name": "Harga",
       "patterns": ["harga", "berapa harga", "price", "per kilo", "harga udang", "harga kepiting", "harga kerang", "harga ikan", "harganya", "pricelist"],
       "responses": [
-        "Daftar Harga Hari Ini:\n🦐 Udang fresh: Rp 60.000/kg\n🦀 Kepiting: Rp 110.000/kg\n🦪 Kerang: Rp 50.000/kg\n🐟 Ikan: Rp 20.000/kg\n\n*Semua harga per kilo ya bro. Beli borongan bisa nego!*"
+        "Daftar Harga per Kilo:\n🦐 Udang fresh: Rp 60.000\n🦀 Kepiting: Rp 110.000\n🦪 Kerang: Rp 50.000\n🐟 Ikan: Rp 20.000\n\n*Beli banyak bisa nego bro!*"
       ]
+    },
+    {
+      "tag": "calculate",
+      "name": "Hitung Total",
+      "patterns": ["total berapa", "totalnya", "jadi berapa", "jumlahnya", "1 kilo", "2 kilo", "3 kilo", "kilo total", "hitung", "nota", "ambil 2", "1kg", "2kg"],
+      "responses": [
+        "Langsung ketik aja pesanan lengkapmu bro (misal: Udang 2kg, Kepiting 1kg), nanti Pat terusin ke admin buat direkap total harga + ongkirnya. (Harga per kilo: Udang 60k, Kepiting 110k, Kerang 50k, Ikan 20k)."
+      ]
+    },
+    {
+      "tag": "how_to_order",
+      "name": "Cara Pesan",
+      "patterns": ["cara pesan", "mau order", "pesan dong", "gimana belinya", "order", "cara beli"],
+      "responses": ["Cara order gampang bro! Langsung ketik aja mau beli apa dan berapa kilo. Nanti admin kami rekap tagihan dan atur pengirimannya."]
     },
     {
       "tag": "fresh",
       "name": "Kesegaran",
-      "patterns": ["fresh ga", "masih fresh", "sejak kapan", "baru ditangkap", "kualitas", "bau ga", "ikan baru"],
+      "patterns": ["fresh ga", "masih fresh", "sejak kapan", "baru ditangkap", "kualitas", "bau ga", "ikan baru", "segar"],
       "responses": ["Sangat fresh! Tangkapan nelayan semalam dan langsung dijual pagi harinya.", "Kualitas premium, insang masih merah dan mata jernih."]
     },
     {
       "tag": "durable",
       "name": "Penyimpanan",
-      "patterns": ["tahan berapa lama", "simpan di kulkas", "awet ga", "bisa disimpan", "cara simpan"],
+      "patterns": ["tahan berapa lama", "simpan di kulkas", "awet ga", "bisa disimpan", "cara simpan", "cepat basi"],
       "responses": ["Di freezer (-18°C) bisa tahan berbulan-bulan. Di suhu kulkas bawah tahan 1-2 hari. Sebaiknya langsung dimasak."]
     },
     {
       "tag": "deliver",
       "name": "Pengiriman",
-      "patterns": ["kirim", "delivery", "diantar", "ongkir", "bisa ke rumah", "pakai gojek", "grab"],
-      "responses": ["Bisa dikirim ke rumah pakai ojek online (Grab/Gojek).", "Kami packing aman pakai es batu supaya tetap fresh di jalan."]
+      "patterns": ["kirim", "delivery", "diantar", "ongkir", "bisa ke rumah", "pakai gojek", "grab", "biaya kirim"],
+      "responses": ["Bisa dikirim ke rumah pakai ojek online (Grab/Gojek).", "Kami packing aman pakai es batu supaya tetap fresh sampai depan pintu."]
     },
     {
       "tag": "location",
       "name": "Lokasi",
-      "patterns": ["lokasi", "alamat", "toko dimana", "toko fisik", "bisa datang langsung", "daerah mana"],
+      "patterns": ["lokasi", "alamat", "toko dimana", "toko fisik", "bisa datang langsung", "daerah mana", "pasar mana"],
       "responses": ["Lokasi kami di Semarang. Bisa datang langsung ke lapak tiap pagi jam 05.00 - 12.00 WIB."]
     },
     {
       "tag": "payment",
       "name": "Pembayaran",
-      "patterns": ["bayar pakai apa", "metode pembayaran", "bisa cod", "transfer", "qris", "bayar ditempat"],
-      "responses": ["Pembayaran bisa via Transfer Bank (BCA/Mandiri), QRIS, atau COD khusus area terdekat."]
+      "patterns": ["bayar pakai apa", "metode pembayaran", "bisa cod", "transfer", "qris", "bayar ditempat", "norek", "rekening"],
+      "responses": ["Pembayaran bisa via Transfer Bank (BCA/Mandiri), QRIS, atau COD khusus area terdekat dari lapak kami."]
     },
     {
       "tag": "cleaning",
       "name": "Jasa Bersihkan",
-      "patterns": ["bisa dibersihkan", "tolong dipotong", "buang kotoran", "fillet", "buang sisik", "potongin"],
-      "responses": ["Bisa bro. Tambahkan di catatan order kalau ikannya mau dibersihkan, dibuang sisiknya, atau dipotong-potong sekalian. Gratis!"]
+      "patterns": ["bisa dibersihkan", "tolong dipotong", "buang kotoran", "fillet", "buang sisik", "potongin", "disiangin"],
+      "responses": ["Bisa bro. Tambahkan di catatan order kalau ikannya mau dibersihkan, dibuang sisiknya, atau dipotong-potong sekalian. 100% Gratis!"]
     },
     {
       "tag": "wholesale",
       "name": "Grosir",
-      "patterns": ["beli banyak", "grosir", "harga reseller", "diskon", "borongan"],
-      "responses": ["Beli di atas 5kg ada harga khusus/reseller. Mau ambil berapa banyak? Nanti Pat sambungkan ke admin."]
+      "patterns": ["beli banyak", "grosir", "harga reseller", "diskon", "borongan", "kurangin dong", "nego", "partai besar"],
+      "responses": ["Beli di atas 5kg ada harga khusus/reseller. Mau ambil berapa banyak? Nanti Pat sambungkan ke admin untuk nego."]
     },
     {
       "tag": "availability",
       "name": "Ketersediaan Stok",
-      "patterns": ["masih ada", "ready stock", "habis", "kosong", "udang ada", "ikan ready"],
-      "responses": ["Stok berubah sangat cepat setiap paginya. Coba sebutkan mau beli apa dan berapa kilo biar Pat cek stoknya sekarang."]
+      "patterns": ["masih ada", "ready stock", "habis", "kosong", "udang ada", "ikan ready", "sisa berapa"],
+      "responses": ["Stok berubah sangat cepat setiap paginya. Coba sebutkan mau beli apa dan berapa kilo biar Pat cek ke belakang sekarang."]
     },
     {
       "tag": "complaint",
       "name": "Komplain",
-      "patterns": ["ikan bau", "busuk", "tidak segar", "komplain", "refund", "kecewa", "jelek"],
-      "responses": ["Mohon maaf atas ketidaknyamanannya. Tolong fotokan atau videokan barangnya, kami akan proses retur atau refund secepatnya."]
+      "patterns": ["ikan bau", "busuk", "tidak segar", "komplain", "refund", "kecewa", "jelek", "rusak"],
+      "responses": ["Mohon maaf atas ketidaknyamanannya. Tolong fotokan atau videokan barangnya, kami akan proses retur atau refund secepatnya. Kepuasan bro nomor 1."]
     },
     {
       "tag": "live_seafood",
       "name": "Kondisi Hidup",
       "patterns": ["masih hidup", "ikan hidup", "kepiting hidup", "mati", "fresh atau hidup"],
-      "responses": ["Kepiting dan kerang rata-rata masih hidup. Untuk udang dan cumi kondisinya mati tapi didinginkan dengan es langsung dari laut."]
+      "responses": ["Kepiting dan kerang rata-rata masih hidup. Untuk udang dan cumi kondisinya mati tapi didinginkan full es langsung dari kapal nelayan."]
     },
     {
       "tag": "preorder",
       "name": "Pre-Order",
-      "patterns": ["pesan buat besok", "preorder", "booking", "pesan dulu", "bisa pesan"],
-      "responses": ["Sangat bisa. Pesan H-1 lebih aman supaya barangnya disisihkan dan tidak kehabisan. Mau pesan apa buat besok?"]
+      "patterns": ["pesan buat besok", "preorder", "booking", "pesan dulu", "bisa pesan", "po"],
+      "responses": ["Sangat bisa. Pesan H-1 lebih aman supaya barangnya disisihkan subuh-subuh dan tidak kehabisan. Mau PO apa nih?"]
+    },
+    {
+      "tag": "packaging",
+      "name": "Pengemasan",
+      "patterns": ["packing", "kotak", "kardus", "es batu", "styrofoam", "aman ga", "dibungkus apa", "buat perjalanan jauh", "bawa ke luar kota"],
+      "responses": ["Tenang bro, packing standar kita pakai plastik tebal lapis dan es batu supaya fresh. Kalau mau dibawa ke luar kota, bisa tambah box styrofoam biar awet belasan jam."]
+    },
+    {
+      "tag": "min_order",
+      "name": "Minimal Order",
+      "patterns": ["minimal order", "minimal beli", "paling sedikit", "bisa beli setengah kilo", "setengah kilo", "seperempat", "eceran"],
+      "responses": ["Minimal pembelian online rata-rata 1 kg bro. Tapi kalau beli datang langsung ke lapak, ambil setengah kilo juga boleh."]
+    },
+    {
+      "tag": "contact_admin",
+      "name": "Kontak Admin",
+      "patterns": ["admin", "cs", "customer service", "ngobrol sama orang", "operator", "no wa", "whatsapp", "nomor wa", "minta nomor"],
+      "responses": ["Pat masih robot yang lagi belajar nih bro. Biar fast respon dan bisa langsung order, WA Admin IFish di nomor: 0877-3473-0091 ya!"]
+    },
+    {
+      "tag": "specific_item",
+      "name": "Ikan Spesifik",
+      "patterns": ["ada salmon", "ada dori", "ada tenggiri", "ada tuna", "gurame", "bawal", "kakap", "nila", "bandeng"],
+      "responses": ["Jenis ikan tangkapan beda-beda tiap hari bro! Kadang ada kakap, tenggiri, atau bawal. Mending sebutin aja cari ikan apa, nanti biar Admin yang ngecek ketersediaannya."]
+    },
+    {
+      "tag": "promo",
+      "name": "Promo",
+      "patterns": ["promo", "ada promo", "potongan harga", "gratis ongkir", "sale", "cashback"],
+      "responses": ["Pasti dong! Beli partai besar otomatis harga miring. Pantau juga IG kita @ifish.seafood buat dapetin info gratis ongkir atau diskon cuci lapak akhir pekan."]
+    },
+    {
+      "tag": "cancel_order",
+      "name": "Batal Order",
+      "patterns": ["batal", "cancel", "batalin pesanan", "gak jadi", "gajadi", "bisa dibatalkan"],
+      "responses": ["Waduh, mau batalin orderan ya? Bisa bro, asalkan ikannya belum terlanjur dibersihkan atau belum dikirim sama kurir. Buruan kontak WA Admin buat konfirmasi ya."]
+    },
+    {
+      "tag": "social_media",
+      "name": "Sosial Media",
+      "patterns": ["ig", "instagram", "sosmed", "tiktok", "facebook", "website", "sosial media"],
+      "responses": ["Jangan lupa follow IG dan TikTok kita di @ifish.seafood buat intip video bongkar muat ikan laut segar setiap subuh! 🦐"]
     }
   ]
 }
