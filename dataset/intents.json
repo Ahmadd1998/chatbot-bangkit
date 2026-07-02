@@ -1,7 +1,7 @@
 {
   "chatbot_name": "PatPat - IFish Assistant",
   "shop_name": "IFish Seafood",
-  "version": "2.1",
+  "version": "2.2",
   "language": "id",
   "last_updated": "2026-07-02",
   
@@ -22,49 +22,97 @@
       "tag": "thanks",
       "name": "Terima Kasih",
       "patterns": ["makasih", "terima kasih", "thanks", "thank you", "sukses"],
-      "responses": ["Sama-sama bro!", "Senang bisa membantu 😊", "Terima kasih juga!"]
+      "responses": ["Sama-sama bro!", "Senang bisa membantu", "Terima kasih juga!"]
     },
     {
       "tag": "name",
       "name": "Nama Bot",
-      "patterns": ["nama kamu siapa", "siapa namamu", "who are you", "pat siapa"],
+      "patterns": ["nama kamu siapa", "siapa namamu", "who are you", "pat siapa", "kamu robot"],
       "responses": ["Aku Pat, asisten virtual IFish Seafood 🦐", "Namaku Pat dari tim IFish!"]
     },
     {
       "tag": "shop",
       "name": "Menu & Rekomendasi",
-      "patterns": ["menu", "mau beli", "rekomendasi", "ada apa saja", "jual apa", "whats on the menu"],
-      "responses": ["Kami menyediakan udang, kepiting, kerang, dan ikan fresh setiap hari!", "Rekomendasi hari ini: Udang fresh dan Kepiting super!"]
+      "patterns": ["menu", "mau beli", "rekomendasi", "ada apa saja", "jual apa", "katalog", "daftar ikan"],
+      "responses": ["Kami menyediakan udang, kepiting, kerang, cumi, dan berbagai ikan laut fresh!", "Rekomendasi hari ini: Udang pancet fresh dan Kepiting bakau super!"]
     },
     {
       "tag": "hours",
       "name": "Jam Operasional",
-      "patterns": ["jam berapa buka", "jam operasional", "buka sampai jam berapa", "tutup jam berapa"],
+      "patterns": ["jam berapa buka", "jam operasional", "buka sampai jam berapa", "tutup jam berapa", "hari ini buka"],
       "responses": ["IFish buka setiap hari pukul 05.00 - 12.00 WIB."]
     },
     {
       "tag": "price",
       "name": "Harga",
-      "patterns": ["harga", "berapa harga", "price", "per kilo", "harga udang", "harga kepiting", "harga kerang"],
-      "responses": ["Udang fresh: Rp10.000/kg 🦐", "Kepiting: Rp10.000/kg 🦀", "Kerang: Rp10.000/kg", "Semua harga per kilo ya."]
+      "patterns": ["harga", "berapa harga", "price", "per kilo", "harga udang", "harga kepiting", "harga kerang", "harganya"],
+      "responses": ["Udang fresh: Rp10.000/kg 🦐", "Kepiting: Rp10.000/kg 🦀", "Kerang: Rp10.000/kg", "Semua harga per kilo ya. Beli banyak bisa nego."]
     },
     {
       "tag": "fresh",
       "name": "Kesegaran",
-      "patterns": ["fresh ga", "masih fresh", "sejak kapan", "baru ditangkap", "kualitas"],
-      "responses": ["Sangat fresh! Ditangkap semalam dan dijual pagi harinya.", "Kualitas premium dari nelayan lokal."]
+      "patterns": ["fresh ga", "masih fresh", "sejak kapan", "baru ditangkap", "kualitas", "bau ga", "ikan baru"],
+      "responses": ["Sangat fresh! Tangkapan nelayan semalam dan langsung dijual pagi harinya.", "Kualitas premium, insang masih merah dan mata jernih."]
     },
     {
       "tag": "durable",
       "name": "Penyimpanan",
-      "patterns": ["tahan berapa lama", "simpan di kulkas", "awet ga", "bisa disimpan"],
-      "responses": ["Di freezer bisa tahan lama. Di suhu ruangan cepat basi, sebaiknya langsung dimasak."]
+      "patterns": ["tahan berapa lama", "simpan di kulkas", "awet ga", "bisa disimpan", "cara simpan"],
+      "responses": ["Di freezer (-18°C) bisa tahan berbulan-bulan. Di suhu kulkas bawah tahan 1-2 hari. Sebaiknya langsung dimasak."]
     },
     {
       "tag": "deliver",
       "name": "Pengiriman",
-      "patterns": ["kirim", "delivery", "diantar", "ongkir", "bisa ke rumah"],
-      "responses": ["Bisa dikirim ke rumah menggunakan ojek online.", "Kami kirim secepatnya setelah pesanan diterima."]
+      "patterns": ["kirim", "delivery", "diantar", "ongkir", "bisa ke rumah", "pakai gojek", "grab"],
+      "responses": ["Bisa dikirim ke rumah pakai ojek online (Grab/Gojek).", "Kami packing aman pakai es batu supaya tetap fresh di jalan."]
+    },
+    {
+      "tag": "location",
+      "name": "Lokasi",
+      "patterns": ["lokasi", "alamat", "toko dimana", "toko fisik", "bisa datang langsung", "daerah mana"],
+      "responses": ["Lokasi kami di Semarang. Bisa datang langsung ke lapak tiap pagi jam 05.00 - 12.00 WIB."]
+    },
+    {
+      "tag": "payment",
+      "name": "Pembayaran",
+      "patterns": ["bayar pakai apa", "metode pembayaran", "bisa cod", "transfer", "qris", "bayar ditempat"],
+      "responses": ["Pembayaran bisa via Transfer Bank (BCA/Mandiri), QRIS, atau COD khusus area terdekat."]
+    },
+    {
+      "tag": "cleaning",
+      "name": "Jasa Bersihkan",
+      "patterns": ["bisa dibersihkan", "tolong dipotong", "buang kotoran", "fillet", "buang sisik", "potongin"],
+      "responses": ["Bisa bro. Tambahkan di catatan order kalau ikannya mau dibersihkan, dibuang sisiknya, atau dipotong-potong sekalian. Gratis!"]
+    },
+    {
+      "tag": "wholesale",
+      "name": "Grosir",
+      "patterns": ["beli banyak", "grosir", "harga reseller", "diskon", "borongan"],
+      "responses": ["Beli di atas 5kg ada harga khusus/reseller. Mau ambil berapa banyak? Nanti Pat sambungkan ke admin."]
+    },
+    {
+      "tag": "availability",
+      "name": "Ketersediaan Stok",
+      "patterns": ["masih ada", "ready stock", "habis", "kosong", "udang ada", "ikan ready"],
+      "responses": ["Stok berubah sangat cepat setiap paginya. Coba sebutkan mau beli apa dan berapa kilo biar Pat cek stoknya sekarang."]
+    },
+    {
+      "tag": "complaint",
+      "name": "Komplain",
+      "patterns": ["ikan bau", "busuk", "tidak segar", "komplain", "refund", "kecewa", "jelek"],
+      "responses": ["Mohon maaf atas ketidaknyamanannya. Tolong fotokan atau videokan barangnya, kami akan proses retur atau refund secepatnya."]
+    },
+    {
+      "tag": "live_seafood",
+      "name": "Kondisi Hidup",
+      "patterns": ["masih hidup", "ikan hidup", "kepiting hidup", "mati", "fresh atau hidup"],
+      "responses": ["Kepiting dan kerang rata-rata masih hidup. Untuk udang dan cumi kondisinya mati tapi didinginkan dengan es langsung dari laut."]
+    },
+    {
+      "tag": "preorder",
+      "name": "Pre-Order",
+      "patterns": ["pesan buat besok", "preorder", "booking", "pesan dulu", "bisa pesan"],
+      "responses": ["Sangat bisa. Pesan H-1 lebih aman supaya barangnya disisihkan dan tidak kehabisan. Mau pesan apa buat besok?"]
     }
   ]
 }
