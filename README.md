@@ -38,7 +38,7 @@ proyek-chatbot/
 
 ```text
 Bash
-git clone [<repository-url>](https://github.com/Ahmadd1998/chatbot-bangkit)
+git clone (https://github.com/Ahmadd1998/chatbot-bangkit)
 
 cd proyek-chatbot
 ```
